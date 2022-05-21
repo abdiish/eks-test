@@ -61,3 +61,9 @@ $routes->post('save', 'Authors::save');
 
 // Ruta -> Eliminar registro(autor)
 $routes->get('delete/(:num)', 'Authors::delete/$1');
+
+// Ruta -> Editar registro(autor), manda a formulario
+$routes->get('update/(:num)', 'Authors::update/$1');
+
+// Ruta -> Actualizar información
+$routes->post('updateAuthor', 'Authors::updateAuthor');

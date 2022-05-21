@@ -29,6 +29,9 @@
         <td><?php echo $autor['fecha_nacimiento']; ?></td>
         <td><?php echo $autor['pais_origen']; ?></td>
         <td>
+        <a class="btn btn-warning me-md-2" 
+           href="<?php echo base_url('update/'.$autor['autor_id']); ?>" 
+           role="button">Editar</a>
         <a class="btn btn-danger me-md-2" 
            href="<?php echo base_url('delete/'.$autor['autor_id']); ?>" 
            role="button">Eliminar</a>
