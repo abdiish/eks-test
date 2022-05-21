@@ -6,6 +6,6 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('authors/CreateAuthor');
+        return view('authors/GetAuthors');
     }
 }

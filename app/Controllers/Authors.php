@@ -8,7 +8,10 @@ class Authors extends Controller{
 
     public function index() {
 
-        return view('authors/GetAuthors');
+        // Instanciar modelo
+        $author = new Author();
+        $data['autores'] = $author->orderBy('autor_id', 'DESC')->findAll();
+        return view( 'authors/GetAuthors', $data );
 
     }
 }
