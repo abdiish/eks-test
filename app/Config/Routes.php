@@ -49,4 +49,9 @@ $routes->get('/', 'Home::index');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+// Ruta -> Obtener lista de de autores 
 $routes->get('GetAuthors', 'Authors::index');
+
+// Ruta -> Crear un nuevo autor
+$routes->get('CreateAuthor', 'Authors::create');
