@@ -10,7 +10,7 @@ class Authors extends Controller{
 
         // Instanciar modelo
         $author = new Author();
-        $data['autores'] = $author->orderBy('autor_id', 'DESC')->findAll();
+        $data['autores'] = $author->orderBy('autor_id', 'ASC')->findAll();
         return view( 'authors/GetAuthors', $data );
 
     }
