@@ -58,3 +58,6 @@ $routes->get('CreateAuthor', 'Authors::create');
 
 // Ruta -> Guardar información de formulario
 $routes->post('save', 'Authors::save');
+
+// Ruta -> Eliminar registro(autor)
+$routes->get('delete/(:num)', 'Authors::delete/$1');

@@ -15,7 +15,7 @@
         <th>Genero</th>
         <th>Fecha nacimiento</th>
         <th>País de origen</th>
-        <th>Acciones</th>
+        <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +28,11 @@
         <td><?php echo $autor['genero']; ?></td>
         <td><?php echo $autor['fecha_nacimiento']; ?></td>
         <td><?php echo $autor['pais_origen']; ?></td>
+        <td>
+        <a class="btn btn-danger me-md-2" 
+           href="<?php echo base_url('delete/'.$autor['autor_id']); ?>" 
+           role="button">Eliminar</a>
+        </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

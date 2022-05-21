@@ -53,5 +53,20 @@ class Authors extends Controller{
 
         $author->insert($data);
 
+        return $this->response->redirect(site_url('/GetAuthors'));
+
+    }
+
+    // Método elimimar registro
+    public function delete($autor_id = null) {
+
+        $author = new Author();
+
+        $data = $author->where('autor_id', $autor_id)->first();
+
+        $author->where('autor_id', $autor_id)->delete($autor_id);
+
+        return $this->response->redirect(site_url('/GetAuthors'));
+
     }
 }
