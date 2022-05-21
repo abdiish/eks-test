@@ -22,7 +22,36 @@ class Authors extends Controller{
     // Método crear nuevo autor
     public function create() {
 
-        return view('authors/CreateAuthor');
+        $data['header'] = view('shared/Header');
+        $data['footer'] = view('shared/Footer');
+
+        return view('authors/CreateAuthor', $data);
     }
 
+    // Método guardar información, nuevo autor   
+    public function save() {
+
+        $author = new Author();
+
+        $nombre           = $this->request->getVar('nombre');
+        $apellido         = $this->request->getVar('apellido');
+        $seudonimo        = $this->request->getVar('seudonimo');
+        $genero           = $this->request->getVar('genero');
+        $fecha_nacimiento = $this->request->getVar('fecha_nacimiento');
+        $pais_origen      = $this->request->getVar('pais_origen');
+
+        // TODOD: Validar datos que vienen del formulario y mostrtar errores segun sea el caso
+
+        $data = [
+            'nombre'=>$nombre,
+            'apellido'=>$apellido,       
+            'seudonimo'=>$seudonimo,
+            'genero'=>$genero,
+            'fecha_nacimiento'=>$fecha_nacimiento, 
+            'pais_origen'=>$pais_origen
+        ];
+
+        $author->insert($data);
+
+    }
 }

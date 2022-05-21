@@ -1,4 +1,5 @@
 <?php echo $header ?>
+<h1>Autores</h1>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2">
   <a class="btn btn-primary me-md-2" 
      href="<?php echo base_url('CreateAuthor') ?>" 

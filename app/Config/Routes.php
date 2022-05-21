@@ -53,5 +53,8 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 // Ruta -> Obtener lista de de autores 
 $routes->get('GetAuthors', 'Authors::index');
 
-// Ruta -> Crear un nuevo autor
+// Ruta -> Crear un nuevo autor,manda a formulario 
 $routes->get('CreateAuthor', 'Authors::create');
+
+// Ruta -> Guardar información de formulario
+$routes->post('save', 'Authors::save');
