@@ -68,7 +68,7 @@
                href="<?php echo base_url('GetAuthors') ?>" 
                role="button">Cancelar</a>
             <button type="submit" 
-                    class="btn btn-primary mt-2">Guardar</button>
+                    class="btn btn-primary mt-2">Actualizar</button>
         </form>  
             </p>
         </div>

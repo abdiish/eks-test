@@ -1,5 +1,6 @@
 <?php echo $header ?>
     <h1>Nuevo autor</h1>
+    
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Ingrese la información requerida</h5>
@@ -15,6 +16,7 @@
                            class="form-control" 
                            type="text" 
                            name="nombre"
+                           value="<?php echo old('nombre') ?>"
                            placeholder="Nombre del autor">
                 </div>
                 <div class="form-group col-md-4">
@@ -23,6 +25,7 @@
                            class="form-control" 
                            type="text" 
                            name="apellido"
+                           value="<?php echo old('apellido') ?>"
                            placeholder="Apellido del autor">
                 </div>
                 <div class="form-group col-md-4">
@@ -31,6 +34,7 @@
                            class="form-control" 
                            type="text" 
                            name="seudonimo"
+                           value="<?php echo old('seudonimo') ?>"
                            placeholder="Seudonimo">
                 </div>
                 <div class="form-group col-md-4">
@@ -47,6 +51,7 @@
                            id="fecha_nacimiento" 
                            name="fecha_nacimiento" 
                            placeholder="MM/DD/YYY" 
+                           value="<?php echo old('fecha_nacimiento') ?>"
                            type="text"/>
                 </div>
                 <div class="form-group col-md-4">
@@ -55,6 +60,7 @@
                            class="form-control" 
                            type="text" 
                            name="pais_origen"
+                           value="<?php echo old('pais_origen') ?>"
                            placeholder="País de origen">
                 </div>
             </div>    

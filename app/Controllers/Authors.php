@@ -33,14 +33,29 @@ class Authors extends Controller{
 
         $author = new Author();
 
+        $validate = $this->validate([
+            'nombre'=>'required|min_length[3]',
+            'apellido'=>'required|min_length[3]',
+            'seudonimo'=>'required|min_length[3]',
+            'genero'=>'required|min_length[1]',
+            'fecha_nacimiento'=>'required|min_length[1]',
+            'pais_origen'=>'required|min_length[1]',
+        ]);
+
+        if (!$validate) {
+            # code...
+            $session = session();
+            $session->setFlashdata('mensaje', 'Todos los campos del formulario son obligatorios');
+            
+            return redirect()->back()->withInput();
+        }
+
         $nombre           = $this->request->getVar('nombre');
         $apellido         = $this->request->getVar('apellido');
         $seudonimo        = $this->request->getVar('seudonimo');
         $genero           = $this->request->getVar('genero');
         $fecha_nacimiento = $this->request->getVar('fecha_nacimiento');
         $pais_origen      = $this->request->getVar('pais_origen');
-
-        // TODOD: Validar datos que vienen del formulario y mostrtar errores segun sea el caso
 
         $data = [
             'nombre'=>$nombre,
@@ -103,8 +118,27 @@ class Authors extends Controller{
         ];
 
         $author_id = $this->request->getVar('autor_id');
+
+        $validate = $this->validate([
+            'nombre'=>'required|min_length[3]',
+            'apellido'=>'required|min_length[3]',
+            'seudonimo'=>'required|min_length[3]',
+            'genero'=>'required|min_length[1]',
+            'fecha_nacimiento'=>'required|min_length[1]',
+            'pais_origen'=>'required|min_length[1]',
+        ]);
+
+        if (!$validate) {
+            # code...
+            $session = session();
+            $session->setFlashdata('mensaje', 'Todos los campos del formulario son obligatorios');
+            
+            return redirect()->back()->withInput();
+        }
+
         $author->update($author_id, $data);
 
+        return $this->response->redirect(site_url('/GetAuthors'));
     }
 }
 
